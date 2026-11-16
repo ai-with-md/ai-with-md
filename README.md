@@ -9,6 +9,7 @@ The thread through my work: make the numbers answer the question a team actually
 Small, free Python tools for building and checking AI systems:
 
 - **[evalsize](https://github.com/ai-with-md/evalsize)**: how many eval examples you need before a difference between prompts or models means anything. [Calculator](https://ai-with-md.github.io/evalsize/)
+- **[evalnoise](https://github.com/ai-with-md/evalnoise)**: where the noise in an eval score comes from (questions, judges, prompt wordings, reruns), and where to spend the next API calls. [Calculator](https://ai-with-md.github.io/evalnoise/)
 - **[costplan](https://github.com/ai-with-md/costplan)**: what an AI agent will cost and what budget cap to set, from a handful of pilot runs. [Calculator](https://ai-with-md.github.io/costplan/)
 - **[sturdytools](https://github.com/ai-with-md/sturdytools)**: retries, timeouts, rate limits and circuit breakers for the tools an AI agent calls.
 
