@@ -1,27 +1,36 @@
-# Hi, I am MD
+<img src="assets/banner.svg" width="100%" alt="Meenal Asesh. I help teams decide what to ship with AI: which model, how many evals, what it costs, and whether it got worse.">
 
-I work in AI research and data science, with 12+ years of building data pipelines, experiments and machine learning systems that run in production. These days I focus on LLM agents and how to evaluate them.
+<p align="center">
+<b>Hiring?</b> <a href="https://ai-with-md.github.io/finetune-or-prompt/memo.html">Read a 2-minute memo</a>
+&nbsp;&nbsp;·&nbsp;&nbsp;
+<b>Shipping LLMs?</b> <a href="https://ai-with-md.github.io/evalsize/">Try a calculator</a>
+&nbsp;&nbsp;·&nbsp;&nbsp;
+<b>Curious?</b> <a href="https://substack.com/@aiwithmd">Read my Substack</a>
+</p>
 
-The thread through my work: make the numbers answer the question a team actually has. Not just "is it significant?" but "what should we do, and what does it cost us if we're wrong?"
+### Questions teams ask me, answered with real data
 
-## Tools
+<p>
+<a href="https://ai-with-md.github.io/finetune-or-prompt/"><img src="assets/card-finetune.svg" width="49%" alt="Fine-tune or prompt: prompting with each message's 10 most similar labelled examples got 94.3% right against 93.3% for a fine-tuned small model, at 6 cents per 1,000 requests."></a>
+<a href="https://ai-with-md.github.io/experimentation-toolkit/"><img src="assets/card-abtest.svg" width="49%" alt="A/B test peeking: checking every day turned a promised 5% false alarm rate into 21% on a real 64,000-customer test."></a>
+</p>
+<p>
+<a href="https://ai-with-md.github.io/evalsize/"><img src="assets/card-evalsize.svg" width="49%" alt="evalsize: telling a 70% model from a 75% one takes 469 questions when both answer the same set, not 1,251."></a>
+<a href="https://ai-with-md.github.io/evalnoise/"><img src="assets/card-evalnoise.svg" width="49%" alt="evalnoise: when judges and prompt wordings varied, the usual error bar covered the true score 74% of the time, not 95%."></a>
+</p>
+<p>
+<a href="https://ai-with-md.github.io/rolloutwatch/"><img src="assets/card-rollout.svg" width="49%" alt="rolloutwatch: checking an ordinary test daily for a month raised false alarms from 5% to 28%; rolloutwatch holds 5%."></a>
+<a href="https://ai-with-md.github.io/costplan/"><img src="assets/card-costplan.svg" width="49%" alt="costplan: 149 pilot runs to promise a budget cap stops at most 2% of normal runs."></a>
+</p>
 
-Small, free Python tools for building and checking AI systems:
+<img src="assets/how-i-work.svg" width="100%" alt="How I work: decide before looking, test the method, answer in money, say what we don't know.">
 
-- **[evalsize](https://github.com/ai-with-md/evalsize)**: how many eval examples you need before a difference between prompts or models means anything. [Calculator](https://ai-with-md.github.io/evalsize/)
-- **[evalnoise](https://github.com/ai-with-md/evalnoise)**: where the noise in an eval score comes from (questions, judges, prompt wordings, reruns), and where to spend the next API calls. [Calculator](https://ai-with-md.github.io/evalnoise/)
-- **[rolloutwatch](https://github.com/ai-with-md/rolloutwatch)**: whether a prompt or model change made quality worse, checking as often as you like without false alarms. [Calculator](https://ai-with-md.github.io/rolloutwatch/)
-- **[costplan](https://github.com/ai-with-md/costplan)**: what an AI agent will cost and what budget cap to set, from a handful of pilot runs. [Calculator](https://ai-with-md.github.io/costplan/)
-- **[sturdytools](https://github.com/ai-with-md/sturdytools)**: retries, timeouts, rate limits and circuit breakers for the tools an AI agent calls.
+<img src="assets/coming-next.svg" width="100%" alt="In progress: what actually improves RAG answers per dollar?">
 
-## How I work
+<p align="center">
+<a href="https://www.linkedin.com/in/ai-with-md"><img src="assets/link-linkedin.svg" height="40" alt="LinkedIn"></a>
+<a href="https://substack.com/@aiwithmd"><img src="assets/link-substack.svg" height="40" alt="Substack"></a>
+<a href="https://x.com/ai_with_md"><img src="assets/link-x.svg" height="40" alt="X"></a>
+</p>
 
-- **Decide before looking.** The decision rule is written down before the results are in.
-- **Test the method, not just the model.** I check that a method behaves on the data I actually have before I trust what it says.
-- **Say what the data can't tell you.** A clear "we don't know yet" beats a confident guess.
-
-## Elsewhere
-
-I've published on speech synthesis, LLM efficiency, time-series prediction and semantic search, and I write about AI on [Substack](https://substack.com/@aiwithmd).
-
-[LinkedIn](https://www.linkedin.com/in/ai-with-md) · [Substack](https://substack.com/@aiwithmd) · [X](https://x.com/ai_with_md)
+<p align="center"><sub>Also: <a href="https://github.com/ai-with-md/sturdytools">sturdytools</a>, one decorator for retries and rate limits in agent tools. Published on speech synthesis, LLM efficiency, time series and semantic search.<br>On GitHub since October 2026; most of my earlier work lives in company repositories.</sub></p>
