@@ -28,23 +28,8 @@
 </tr>
 </table>
 
-<table>
-<tr>
-<td width="50%" valign="top">
-
-#### Latest writing
-
-{{ writing }}
-
-</td>
-<td width="50%" valign="top">
-
-#### More on GitHub
+### More on GitHub
 
 {{ more }}
-
-</td>
-</tr>
-</table>
 
 <sub>Published on speech synthesis, LLM efficiency, time series and semantic search. On GitHub since October 2026; most of my earlier work lives in company repositories.</sub>

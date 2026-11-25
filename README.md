@@ -42,30 +42,10 @@
 </tr>
 </table>
 
-<table>
-<tr>
-<td width="50%" valign="top">
-
-#### Latest writing
-
-<!-- writing starts -->
-- [How many eval questions do you actually need?](https://aiwithmd.substack.com/p/how-many-eval-questions-do-you-actually) <sub>Nov 24, 2026</sub>
-- [HCLTech Is Growing AI Revenue and Hiring Freshers at the Same Time](https://aiwithmd.substack.com/p/hcltech-is-growing-ai-revenue-and) <sub>Oct 13, 2026</sub>
-
-<sub>[All posts on Substack](https://substack.com/@aiwithmd)</sub>
-<!-- writing ends -->
-
-</td>
-<td width="50%" valign="top">
-
-#### More on GitHub
+### More on GitHub
 
 <!-- more starts -->
 - [**sturdytools**](https://github.com/ai-with-md/sturdytools) Retries, timeouts, rate limits and circuit breakers for AI agent tools. One decorator, works with MCP and LangChain.
 <!-- more ends -->
-
-</td>
-</tr>
-</table>
 
 <sub>Published on speech synthesis, LLM efficiency, time series and semantic search. On GitHub since October 2026; most of my earlier work lives in company repositories.</sub>
