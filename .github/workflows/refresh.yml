@@ -1,0 +1,40 @@
+name: Refresh profile
+
+# Rebuilds the README and cards, then opens a pull request if anything
+# changed. Runs weekly to pick up new Substack posts and newly public repos,
+# and whenever the project list, the script or the template changes.
+
+on:
+  schedule:
+    - cron: "0 7 * * 1"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - projects.toml
+      - scripts/**
+      - fonts/**
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r scripts/requirements.txt
+      - run: python scripts/build.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: peter-evans/create-pull-request@v7
+        with:
+          branch: auto/refresh
+          delete-branch: true
+          commit-message: Refresh profile
+          title: Refresh profile
+          body: New posts, newly public repos or card changes, rebuilt by scripts/build.py.
