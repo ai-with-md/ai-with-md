@@ -1,7 +1,7 @@
 name: Refresh profile
 
 # Rebuilds the README and cards, then opens a pull request if anything
-# changed. Runs weekly to pick up new Substack posts and newly public repos,
+# changed. Runs weekly to pick up newly public repos,
 # and whenever the project list, the script or the template changes.
 
 on:
@@ -37,4 +37,4 @@ jobs:
           delete-branch: true
           commit-message: Refresh profile
           title: Refresh profile
-          body: New posts, newly public repos or card changes, rebuilt by scripts/build.py.
+          body: Newly public repos or card changes, rebuilt by scripts/build.py.

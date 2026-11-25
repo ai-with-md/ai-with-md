@@ -1,29 +1,27 @@
 """Build the profile README and its SVG cards.
 
 Reads projects.toml and scripts/README.template.md, draws the banner and one
-card per project into assets/, and writes README.md. Two sections are filled
-from the web: the latest Substack posts and the public repos that have no
-card. If either fetch fails, the section keeps what README.md already had.
+card per project into assets/, and writes README.md. The list of public
+repos that have no card is filled from the GitHub API. If that fetch fails,
+the list keeps what README.md already had.
 
 Text in the SVGs is drawn as glyph outlines from the fonts in fonts/, so the
 cards look the same on every device (SVGs shown through <img> cannot load
 web fonts).
 
     python scripts/build.py            # everything
-    python scripts/build.py --offline  # skip the web, keep those sections
+    python scripts/build.py --offline  # skip the API, keep the old list
 """
 
 from __future__ import annotations
 
 import argparse
-import email.utils
 import html
 import json
 import os
 import re
 import tomllib
 import urllib.request
-import xml.etree.ElementTree as ET
 from pathlib import Path
 
 from fontTools.pens.svgPathPen import SVGPathPen
@@ -31,8 +29,6 @@ from fontTools.ttLib import TTFont
 
 ROOT = Path(__file__).resolve().parent.parent
 USER = "ai-with-md"
-FEED = "https://aiwithmd.substack.com/feed"
-POSTS = 4
 
 # Light "lab notebook" palette: warm paper, deep indigo ink, four accents.
 PAPER = "#FBF8F2"
@@ -289,18 +285,6 @@ def fetch(url: str) -> bytes:
         return r.read()
 
 
-def writing() -> str:
-    root = ET.fromstring(fetch(FEED))
-    lines = []
-    for item in list(root.iter("item"))[:POSTS]:
-        when = email.utils.parsedate_to_datetime(item.findtext("pubDate"))
-        title = tidy(item.findtext("title").strip())
-        lines.append(f"- [{title}]({item.findtext('link').strip()}) <sub>{when:%b %-d, %Y}</sub>")
-    lines.append("")
-    lines.append("<sub>[All posts on Substack](https://substack.com/@aiwithmd)</sub>")
-    return "\n".join(lines)
-
-
 def more(carded: set[str]) -> str:
     """Public repos without a card, newest first. Never lists private repos."""
     repos = json.loads(fetch(f"https://api.github.com/users/{USER}/repos?per_page=100&sort=created"))
@@ -350,10 +334,10 @@ def main() -> None:
 
     readme_path = ROOT / "README.md"
     current = readme_path.read_text() if readme_path.exists() else ""
-    sections = {"writing": keep(current, "writing"), "more": keep(current, "more")}
+    sections = {"more": keep(current, "more")}
     if not args.offline:
         carded = {p["repo"] for p in [newest, *grid]}
-        for name, build in (("writing", writing), ("more", lambda: more(carded))):
+        for name, build in (("more", lambda: more(carded)),):
             try:
                 sections[name] = build()
             except Exception as exc:  # keep the old section rather than fail the build
