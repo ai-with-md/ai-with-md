@@ -1,0 +1,134 @@
+# Cards on the profile README. One [[project]] block per card.
+#
+# To add a project: copy a block, fill it in, and run `python scripts/build.py`.
+# The newest project (by date) becomes the wide card at the top. Older ones
+# fill the grid two per row; if the count is odd, the oldest moves to the
+# text list under "More on GitHub".
+#
+# Public repos that have no block here still show up in that text list,
+# using the repo's own description, so nothing public is ever left out.
+#
+# accent: teal (evals), clay (experiments), ochre (cost), indigo (LLMs, RAG)
+# bars: the highlighted bar is drawn in the accent colour.
+# caption_short: optional, used in the grid if the caption is too long there.
+
+[[project]]
+repo = "rag-per-dollar"
+date = "2026-11-21"
+kind = "Study"
+area = "RAG"
+accent = "indigo"
+question = "Which RAG upgrades are worth paying for?"
+big = "9 of 24"
+caption = "RAG setups on multi-hop questions scored below a guess that never reads the documents. Retrieval scores ranked setups well but overstated what an upgrade is worth."
+caption_short = "RAG setups on multi-hop questions scored below a guess that never reads the documents."
+bars = [
+  { label = "Best setup", value = 71, text = "71%", highlight = true },
+  { label = "Guess, never reads", value = 48.1, text = "48%" },
+  { label = "Worst setup", value = 30, text = "30%" },
+]
+link = "https://github.com/ai-with-md/rag-per-dollar"
+cta = "See which upgrade to buy first"
+alt = "rag-per-dollar: on multi-hop questions, 9 of 24 RAG setups scored below a guess that never reads the documents. The best setup got 71% right, the worst 30%."
+
+[[project]]
+repo = "finetune-or-prompt"
+date = "2026-11-16"
+kind = "Study"
+area = "LLMs"
+accent = "indigo"
+question = "Fine-tune a small model, or prompt a big one?"
+big = "6¢"
+caption = "per 1,000 requests to prompt with 10 similar labelled examples, which beat the fine-tuned model."
+bars = [
+  { label = "Prompt + similar examples", value = 94.3, text = "94.3%", highlight = true },
+  { label = "Fine-tuned small model", value = 93.3, text = "93.3%" },
+]
+link = "https://ai-with-md.github.io/finetune-or-prompt/memo.html"
+cta = "Read the 2-minute memo"
+alt = "Fine-tune or prompt: prompting with each message's 10 most similar labelled examples got 94.3% right against 93.3% for a fine-tuned small model, at 6 cents per 1,000 requests."
+
+[[project]]
+repo = "costplan"
+date = "2026-11-13"
+kind = "Tool"
+area = "AI agents"
+accent = "ochre"
+question = "How much will our AI agent cost?"
+big = "149"
+caption = "pilot runs to promise a budget cap that stops at most 2% of normal runs. With 20 runs, the best honest promise is 13.9%."
+bars = [
+  { label = "20 pilot runs", value = 13.9, text = "13.9% stopped" },
+  { label = "149 pilot runs", value = 2, text = "2% stopped", highlight = true },
+]
+link = "https://ai-with-md.github.io/costplan/"
+cta = "Try the calculator"
+alt = "costplan: 149 pilot runs to promise a budget cap stops at most 2% of normal runs; with 20 runs the best promise is 13.9%."
+
+[[project]]
+repo = "evalnoise"
+date = "2026-11-16"
+kind = "Tool"
+area = "LLM evals"
+accent = "teal"
+question = "How much can we trust our eval score?"
+big = "74%"
+caption = "how often the usual error bar covered the true score when judges and prompt wordings varied. It promises 95%."
+bars = [
+  { label = "Usual error bar", value = 74, text = "74%" },
+  { label = "evalnoise", value = 94, text = "94%", highlight = true },
+]
+link = "https://ai-with-md.github.io/evalnoise/"
+cta = "Try the calculator"
+alt = "evalnoise: when judges and prompt wordings varied, the usual error bar covered the true score 74% of the time, not 95%. evalnoise covered it 94%."
+
+[[project]]
+repo = "rolloutwatch"
+date = "2026-11-14"
+kind = "Tool"
+area = "LLM monitoring"
+accent = "teal"
+question = "Did our prompt change make things worse?"
+big = "28%"
+caption = "false alarms from checking an ordinary test every day for a month. rolloutwatch holds 5% however often you check."
+bars = [
+  { label = "Ordinary test, daily", value = 28, text = "28%" },
+  { label = "rolloutwatch, daily", value = 5, text = "5%", highlight = true },
+]
+link = "https://ai-with-md.github.io/rolloutwatch/"
+cta = "Try the calculator"
+alt = "rolloutwatch: checking an ordinary test daily for a month raised false alarms from 5% to 28%; rolloutwatch holds 5%."
+
+[[project]]
+repo = "evalsize"
+date = "2026-11-12"
+kind = "Tool"
+area = "LLM evals"
+accent = "teal"
+question = "How many eval questions do we need?"
+big = "469"
+caption = "questions to tell a 70% model from a 75% one when both answer the same set. Separate sets need 1,251 each."
+bars = [
+  { label = "Separate questions", value = 1251, text = "1,251" },
+  { label = "Same questions", value = 469, text = "469", highlight = true },
+]
+link = "https://ai-with-md.github.io/evalsize/"
+cta = "Try the calculator"
+alt = "evalsize: telling a 70% model from a 75% one takes 469 questions when both answer the same set, not 1,251."
+
+[[project]]
+repo = "experimentation-toolkit"
+date = "2026-11-11"
+kind = "Study"
+area = "A/B testing"
+accent = "clay"
+question = "Can we check our A/B test every day?"
+big = "21%"
+caption = "false alarms from daily checks on a real 64,000-customer test. 5% was promised."
+bars = [
+  { label = "Check once", value = 5, text = "5%" },
+  { label = "Check every day", value = 21, text = "21%", highlight = true },
+]
+link = "https://ai-with-md.github.io/experimentation-toolkit/"
+cta = "See what else breaks"
+alt = "A/B test peeking: checking every day turned a promised 5% false alarm rate into 21% on a real 64,000-customer test."
